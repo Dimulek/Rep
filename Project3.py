@@ -245,7 +245,7 @@ def getUserWindow():
         match(input("1) Сделать заказ \n2) Посмотрет историяю \n3) Выйти\n")):
             case "1":
                 try:
-                    createOrderWithCountDishes(int(input("Введите количество покупаемого продукта. (При 5 и более блюд скидка 15%)\n")))
+                    createOrderWithCountDishes(int(input("Введите количество покупаемого продукта. (При 5 и более блюд скидка 5%)\n")))
                 except:
                     return
             case "2":
