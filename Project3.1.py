@@ -51,7 +51,7 @@ def Register(login, password, email):
         return
     setConnection()
     cursor.execute(f"SELECT count(*) from Visitor where Login_Visitor = \'{login}\'")
-    
+    2
     if(cursor.fetchall()[0][0] == 0):
         cursor.execute(f"INSERT INTO Visitor (Login_Visitor, Password_Visitor, Email_Visitor) values(\'{login}\', \'{password}\', \'{email}\')")
         cursor.commit()
