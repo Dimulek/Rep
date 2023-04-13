@@ -74,7 +74,7 @@ def getCardType(visitor):
 
 def getAllIngridientsTypes():
     setConnection()
-    cursor.execute(f"SELECT ID_IngridientType, Name_IngridientType FROM IngridientType order by ID_IngridientType ASC")
+    cursor.execute(f"SELECT ID_IngridientType, Name_IngridientType FROM IngridientType where Name_IngridientType != 'Ошибка' order by ID_IngridientType ASC")
     table = cursor.fetchall()
     cnxn.close()
     return table
@@ -110,7 +110,11 @@ def updateIngridientCount(Ingridient, countIngridient):
 
 def getAllIngridientsOfDish(dishNumber):
     setConnection()
-    cursor.execute(f"SELECT ID_DishIngridients, Name_Ingridient from DishesOfOrder inner join DishIngridients on DishesOfOrder_ID = ID_DishesOfOrder inner join Ingridient on Ingridient_ID = ID_Ingridient where ID_DishesOfOrder = (select ID_DishesOfOrder from DishesOfOrder where OrderOfVisitor_ID = {orderID} ORDER BY ID_DishesOfOrder DESC	OFFSET {dishNumber-1} ROWS FETCH NEXT 1 ROWS ONLY)")
+    print("DishNuber = "); 
+    print(dishNumber); 
+    print("OrderID = "); 
+    print(orderID); 
+    cursor.execute(f"SELECT ID_DishIngridients, Name_Ingridient from DishesOfOrder inner join DishIngridients on DishesOfOrder_ID = ID_DishesOfOrder inner join Ingridient on Ingridient_ID = ID_Ingridient where DishesOfOrder_ID = (select ID_DishesOfOrder from DishesOfOrder where OrderOfVisitor_ID = {orderID} ORDER BY ID_DishesOfOrder ASC OFFSET ({dishNumber-1}) ROWS FETCH NEXT 1 ROWS ONLY)")
     table = cursor.fetchall()
     cnxn.close()
     return table
@@ -309,6 +313,7 @@ def SignOut():
     visitorID = -1
 
 def sendCode(emeil):
+    return True;
     try:
         smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
         smtpObj.starttls()

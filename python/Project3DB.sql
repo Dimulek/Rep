@@ -230,7 +230,7 @@ as
 			set @countDish2 = @countDish2 - 1
 		end
 
-		set @percent = (@percent + (select percentCount from getCardType(1)))
+		set @percent = (@percent + (select Top(1) percentCount from getCardType(1)))
 
 		Declare @BadFoodID int = (select Top(1)ID_Ingridient from Ingridient where IngridientType_ID = 10)
 		Declare @DishIndex int = (ABS(CHECKSUM(NEWID()) % (1 - 1 + 1)) + 1)
@@ -240,8 +240,8 @@ as
 			insert into DishIngridients(DishesOfOrder_ID, Ingridient_ID)
 			values((select ID_DishesOfOrder from DishesOfOrder where OrderOfVisitor_ID = @Order_ID 
 			ORDER BY ID_DishesOfOrder DESC
-				OFFSET @countDish3-1 ROWS FETCH NEXT 1 ROWS ONLY), @BadFoodID)
-			set @percent = @percent + 5
+				OFFSET @DishIndex-1 ROWS FETCH NEXT 1 ROWS ONLY), @BadFoodID)
+			set @percent += 5
 		end
 
 		set @MoneySum = @MoneySum - ((@MoneySum/100) * @percent)
@@ -329,3 +329,17 @@ left join DishIngridients on ID_DishesOfOrder = DishesOfOrder_ID
 left join Ingridient on ID_Ingridient = Ingridient_ID 
 where Visitor_ID = 2 and Status_OrderOfVisitor = 1 
 Group by ID_DishesOfOrder, FullCost_DishesOfOrder, Percent_OrderOfVisitor, OrderOfVisitor_ID
+
+--SELECT ID_DishIngridients, Name_Ingridient from DishesOfOrder 
+--left join DishIngridients on DishesOfOrder_ID = ID_DishesOfOrder 
+--left join Ingridient on Ingridient_ID = ID_Ingridient 
+--where ID_DishesOfOrder = 4
+--(select ID_DishesOfOrder from DishesOfOrder where OrderOfVisitor_ID = 1 ORDER BY ID_DishesOfOrder DESC	OFFSET (1) ROWS FETCH NEXT 1 ROWS ONLY)
+
+SELECT ID_DishIngridients, Name_Ingridient from DishesOfOrder inner join DishIngridients on DishesOfOrder_ID = ID_DishesOfOrder inner join Ingridient on Ingridient_ID = ID_Ingridient where OrderOfVisitor_ID = 1 
+ORDER BY ID_DishesOfOrder DESC	OFFSET (0) ROWS FETCH NEXT 1 ROWS ONLY
+
+select * from DishesOfOrder
+select * from IngridientType
+
+SELECT ID_DishIngridients, Name_Ingridient from DishesOfOrder inner join DishIngridients on DishesOfOrder_ID = ID_DishesOfOrder inner join Ingridient on Ingridient_ID = ID_Ingridient where DishesOfOrder_ID = (select ID_DishesOfOrder from DishesOfOrder where OrderOfVisitor_ID = 4 ORDER BY ID_DishesOfOrder ASC OFFSET (0) ROWS FETCH NEXT 1 ROWS ONLY)
