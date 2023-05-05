@@ -313,7 +313,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 8104,Gauntlet: Dark Legacy,GC,2002.0,Action,Midway Games,0.14,0.04,0.0,0.0,0.18
 5364,Skylanders: Trap Team,XOne,2014.0,Action,Activision,0.25,0.07,0.0,0.03,0.34
 12538,Cabela's Dangerous Hunts: Ultimate Challenge,PSP,2006.0,Sports,Activision Value,0.06,0.0,0.0,0.0,0.06
-7353,Yu Yu Hakusho: Dark Tournament,PS2,2006.0788990825688,Fighting,,0.1,0.08,0.0,0.03,0.21
+7353,Yu Yu Hakusho: Dark Tournament,PS2,2006.0788990825688,Fighting,Nothing,0.1,0.08,0.0,0.03,0.21
 6821,Corvette,XB,2003.0,Racing,TDK Mediactive,0.18,0.05,0.0,0.01,0.24
 5796,The King of Fighters XIII,PS3,2011.0,Fighting,Rising Star Games,0.17,0.07,0.04,0.03,0.31
 8003,Dance Dance Revolution: Disney Grooves,Wii,2009.0,Simulation,Konami Digital Entertainment,0.17,0.0,0.0,0.01,0.18
@@ -323,7 +323,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 13352,Crusader: No Remorse,PS,1996.0,Adventure,Electronic Arts,0.03,0.02,0.0,0.0,0.05
 2546,Final Fantasy Type-0,PSP,2011.0,Role-Playing,Unknown,0.0,0.0,0.81,0.0,0.81
 12475,Crazy Chicken Tales,Wii,2009.0,Action,Conspiracy Entertainment,0.06,0.0,0.0,0.0,0.06
-3768,SpongeBob SquarePants: Game Boy Advance Video Volume 2,GBA,2004.0,Misc,,0.38,0.14,0.0,0.01,0.53
+3768,SpongeBob SquarePants: Game Boy Advance Video Volume 2,GBA,2004.0,Misc,Nothing,0.38,0.14,0.0,0.01,0.53
 4649,Castlevania: Curse of Darkness,PS2,2005.0,Action,Konami Digital Entertainment,0.18,0.14,0.05,0.05,0.42
 14533,Need for Speed (2015),PC,2016.0,Racing,Electronic Arts,0.0,0.03,0.0,0.0,0.03
 8431,25 to Life,XB,2006.0,Shooter,Eidos Interactive,0.12,0.04,0.0,0.01,0.17
@@ -446,7 +446,7 @@ Rank,Name,Platform,Year,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,G
 14020,World in Conflict,PC,2007.0,Strategy,Vivendi Games,0.0,0.03,0.0,0.01,0.04
 445,Personal Trainer: Cooking,DS,2006.0,Misc,Nintendo,0.91,1.0,1.03,0.17,3.12
 6313,NickToons: Racing,GBA,2002.0,Racing,Infogrames,0.19,0.07,0.0,0.0,0.27
-8898,Strawberry Shortcake: Game Boy Advance Video Volume 1,GBA,2004.0,Misc,,0.11,0.04,0.0,0.0,0.15
+8898,Strawberry Shortcake: Game Boy Advance Video Volume 1,GBA,2004.0,Misc,Nothing,0.11,0.04,0.0,0.0,0.15
 634,Need for Speed Carbon: Own the City,PSP,2006.0,Racing,Electronic Arts,0.87,0.98,0.0,0.59,2.44
 13117,Fighter Destiny 2,N64,1999.0,Fighting,Imagineer,0.04,0.01,0.0,0.0,0.05
 12033,Jake Power: Handyman,DS,2008.0,Adventure,Ubisoft,0.06,0.0,0.0,0.0,0.07

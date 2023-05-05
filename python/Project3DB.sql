@@ -19,10 +19,10 @@ values ('Пользователь'), ('Администратор')
 go
 create table Visitor(
 ID_Visitor int not null IDENTITY (1,1),
-Login_Visitor varchar(50) not null,
-Password_Visitor varchar(50) not null,
-Money_Left decimal(15,2) not null default(100000.00),
-Email_Visitor varchar(max) not null,
+--Login_Visitor varchar(50) not null,
+--Password_Visitor varchar(50) not null,
+--Money_Left decimal(15,2) not null default(100000.00),
+--Email_Visitor varchar(max) not null,
 Role_ID int not null default(1),
 constraint UQ_Login unique(Login_Visitor),
 PRIMARY KEY (ID_Visitor),
